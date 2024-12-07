@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online Sederhana</title>
+    <link rel="stylesheet" href="edit.css">
+</head>
+<body>
+    <header>
+        <h1>Toko Online Sederhana</h1>
+        <div class="cart">
+            <span>Keranjang: <span id="cart-count">0</span> item</span>
+        </div>
+    </header>
+    <main>
+        <section class="products">
+            <h2>Produk Kami</h2>
+            <div class="product">
+                <h3>Produk A</h3>
+                <img src="tas.jpg" alt="Produk A">
+                <p>Harga: Rp 100.000</p>
+                <button class="add-to-cart" data-name="Produk A" data-price="100000">Tambah ke Keranjang</button>
+            </div>
+            <div class="product">
+                <h3>Produk B</h3>
+                <img src="tas1.jpg" alt="Produk B">
+                <p>Harga: Rp 200.000</p>
+                <button class="add-to-cart" data-name="Produk B" data-price="200000">Tambah ke Keranjang</button>
+            </div>
+            <div class="product">
+                <h3>Produk C</h3>
+                <img src="tas2.jpg" alt="Produk C">
+                <p>Harga: Rp 300.000</p>
+                <button class="add-to-cart" data-name="Produk C" data-price="300000">Tambah ke Keranjang</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Hak Cipta &copy; 2024 Toko Online Sederhana</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+    let cartCount = 0;
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        cartCount++;
+        document.getElementById('cart-count').innerText = cartCount;
+        alert(`${button.getAttribute('data-name')} telah ditambahkan ke keranjang!`);
+    });
+});
+</script>
